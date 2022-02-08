@@ -1,0 +1,4 @@
+- name: 'gcr.io/idfy-299017/git'
+  args: ['clone', 'https://github.com/ammut891/cloud-build.git']
+
+images: ['gcr.io/idfy-299017/git']
