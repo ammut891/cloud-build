@@ -1,8 +1,0 @@
-{
-    "project_id": "idfy-299017",
-    "machine_type": "n1-standard-2",
-    "region": "asia-south1",
-    "zone": "asia-south1-c",
-    "source_image_family": "debian-10",
-    "image_name": "cloud-build"
-  }
