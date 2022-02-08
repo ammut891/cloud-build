@@ -3,6 +3,7 @@ steps:
   args:
   - kms
   - decrypt
+  - --ciphertext-file=secrets.enc
   - --plaintext-file=secrets.json
   - --location=global
   - --keyring=packer
