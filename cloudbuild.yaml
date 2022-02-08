@@ -1,21 +1,11 @@
-# File: cloudbuild.yaml
-#steps:
-#- name: 'gcr.io/idfy-299017/git'
-#  args: ['clone', 'https://github.com/ammut891/cloud-build.git']
-#options:
-#  logging: CLOUD_LOGGING_ONLY
-#images: ['gcr.io/idfy-299017/git']
-
 steps:
-- name: eu.gcr.io/customer-app-${_ENV}/packer
-  env:
-  - PROJECT_ID=customer-app-${_ENV}
+- name: 'gcr.io/$PROJECT_ID/packer'
   args:
     - build
-    - -force
     - -var
-    - project_id=customer-app-${_ENV}
+    - project_id=$PROJECT_ID
     - 'packer/docker.json'
 options:
   logging: CLOUD_LOGGING_ONLY
 timeout: 1800s
+tags: ['packer-gce-goss']
