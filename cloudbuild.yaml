@@ -1,15 +1,16 @@
-steps:
-- name: 'gcr.io/cloud-builders/gcloud'
+#steps:
+#- name: 'gcr.io/cloud-builders/gcloud'
+#  args:
+#  - kms
+#  - decrypt
+#  - --ciphertext-file=secrets.enc
+#  - --plaintext-file=secrets.json
+#  - --location=global
+#  - --keyring=packer
+#  - --key=key
+- name: 'hashicorp/packer'
   args:
-  - kms
-  - decrypt
-  - --ciphertext-file=secrets.enc
-  - --plaintext-file=secrets.json
-  - --location=global
-  - --keyring=packer
-  - --key=key
-- name: 'gcr.io/$PROJECT_ID/packer'
-  args:
+    - validate
     - build
     - -var
     - project_id=$PROJECT_ID
@@ -17,4 +18,3 @@ steps:
 options:
   logging: CLOUD_LOGGING_ONLY
 timeout: 1800s
-tags: ['packer-gce-goss']
