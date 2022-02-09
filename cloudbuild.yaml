@@ -14,7 +14,7 @@
     - build
     - -var
     - project_id=$PROJECT_ID
-    - 'packer/docker.json'
+    - docker.json
 options:
   logging: CLOUD_LOGGING_ONLY
 timeout: 1800s
