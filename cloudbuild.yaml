@@ -1,4 +1,4 @@
-#steps:
+steps:
 #- name: 'gcr.io/cloud-builders/gcloud'
 #  args:
 #  - kms
@@ -10,11 +10,11 @@
 #  - --key=key
 - name: 'hashicorp/packer'
   args:
-    - validate
-    - build
-    - -var
-    - project_id=$PROJECT_ID
-    - docker.json
+  - validate
+  - build
+  - -var
+  - project_id=$PROJECT_ID
+  - docker.json
 options:
   logging: CLOUD_LOGGING_ONLY
 timeout: 1800s
