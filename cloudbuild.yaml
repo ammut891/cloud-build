@@ -8,10 +8,11 @@ steps:
 #  - --location=global
 #  - --keyring=packer
 #  - --key=key
-- name: 'hashicorp/packer'
+- name: 'gcr.io/$PROJECT_ID/packer'
   args:
   - validate
   - build
+  - -var
   - project_id=$PROJECT_ID
   - docker.json
 options:
